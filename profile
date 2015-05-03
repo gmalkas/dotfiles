@@ -42,5 +42,3 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 
 # disable ctrl+s
 stty -ixon
-
-export TERM='xterm-256color'
