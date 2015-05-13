@@ -1,5 +1,7 @@
 execute pathogen#infect()
 
+set encoding=utf-8
+
 syntax enable
 
 filetype plugin on
@@ -41,6 +43,7 @@ set ambiwidth=single
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 colorscheme Tomorrow-Night-Eighties
+set background=dark
 
 hi ColorColumn ctermbg=236
 set colorcolumn=80

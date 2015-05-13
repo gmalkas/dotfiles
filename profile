@@ -23,7 +23,9 @@ alias psa='ps aux | grep'
 
 alias svim='sudo /home/vagrant/tools/vim74/bin/vim'
 
-alias sp='se ./bin/rspec'
+alias sp='se ./bin/rspec --fail-fast'
+
+alias sulti='s start redis; s start rabbitmq; s start elasticsearch-1.3; s start mysql55;'
 
 alias rd='se ./bin/rake db:reset'
 alias rdt='se ./bin/rake db:reset RAILS_ENV=test'
