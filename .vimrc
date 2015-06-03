@@ -7,6 +7,9 @@ syntax enable
 filetype plugin on
 filetype indent on
 
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+
 set nocompatible
 set showcmd
 set tabstop=2
@@ -65,18 +68,7 @@ set nojoinspaces
 " Prevent Ag from previewing first match by default
 ca Ag Ag!
 
-" Haskell stuff
-" Reload
-"map <silent> tu :call GHC_BrowseAll()<CR>
-" Type Lookup
-"map tt :call GHC_ShowType(0)<CR>
-" Type infer
-"map <silent> tw :call GHC_ShowType(1)<CR>
-
-if !empty($MY_RUBY_HOME)
-  let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/rubysite_ruby/*'),"\n"),',')
-endif
-
 " CommandT options
  let g:CommandTFileScanner='ruby'
  let g:CommandTTraverseSCM='pwd'
+ let g:CommandTWildIgnore=&wildignore . ",node_modules/**,_build/**,deps/**,rel/**"
