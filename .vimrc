@@ -26,6 +26,7 @@ set ruler
 set noswapfile
 set t_Co=256
 set cursorline
+set relativenumber
 
 " Show trailing char
 set list
