@@ -9,6 +9,7 @@ filetype indent on
 
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>s :Ag! <cword><CR>
 
 set nocompatible
 set showcmd
