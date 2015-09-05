@@ -26,7 +26,7 @@ set ruler
 set noswapfile
 set t_Co=256
 set cursorline
-set relativenumber
+"set relativenumber
 
 " Show trailing char
 set list
@@ -73,4 +73,5 @@ ca Ag Ag!
 " CommandT options
  let g:CommandTFileScanner='ruby'
  let g:CommandTTraverseSCM='pwd'
- let g:CommandTWildIgnore=&wildignore . ",node_modules/**,_build/**,deps/**,rel/**"
+ let g:CommandTWildIgnore=&wildignore . ",node_modules/**,_build/**,deps/**,rel/**,bower_components/**"
+ let g:vroom_spec_command='se ./bin/rspec'

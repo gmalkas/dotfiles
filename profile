@@ -28,6 +28,7 @@ alias sp='se ./bin/rspec --fail-fast'
 alias sulti='s start redis; s start rabbitmq; s start elasticsearch-1.3; s start mysql55;'
 
 alias rd='se ./bin/rake db:reset'
+alias rdm='se ./bin/rake db:migrate'
 alias rdt='se ./bin/rake db:reset RAILS_ENV=test'
 
 # tools
