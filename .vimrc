@@ -11,6 +11,9 @@ let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>s :Ag! <cword><CR>
 
+" Pretty JSON
+map <Leader>j :%!python -m json.tool<CR>
+
 set nocompatible
 set showcmd
 set tabstop=2
