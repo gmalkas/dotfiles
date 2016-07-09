@@ -1,0 +1,16 @@
+* install libpython3-dev, python3, python3-dev, silversearcher-ag, python3-pip
+* install powerline with pip: pip3 install powerline-status
+* download & compile vim with:
+./configure --prefix=/home/vagrant/tools/vim74 --disable-darwin --enable-python3interp=yes --enable-rubyinterp=yes --enable-multibyte --disable-netbeans --with-features=big --enable-perlinterp=yes
+
+* vim powerline:
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+* tmux powerline:
+source '/home/vagrant/.local/lib/python3.4/site-packages/powerline/bindings/tmux/powerline.conf'
+
+* Bash aliases
+* vim plugins
+* vimrc, tmuxconf

@@ -1,6 +1,5 @@
 # vim default editor
 export EDITOR=vim
-export PATH="$HOME/tools/vim74/bin:$HOME/.local/bin:$PATH"
 
 # useful aliases
 alias be='bundle exec'
