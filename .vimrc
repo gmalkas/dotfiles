@@ -1,15 +1,18 @@
-execute pathogen#infect()
-
 set encoding=utf-8
+
+execute pathogen#infect()
 
 syntax enable
 
 filetype plugin on
 filetype indent on
 
+" matchit
+runtime macros/matchit.vim
+
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>s :Ag! <cword><CR>
+nnoremap <Leader>s :Ack! <cword><CR>
 
 " Pretty JSON
 map <Leader>j :%!python -m json.tool<CR>
@@ -42,9 +45,6 @@ set backspace=2
 map ,h :set hlsearch<CR>
 map ,n :set nohlsearch<CR>
 
-" No toolbar in GVim
-set guioptions-=T
-
 set laststatus=2
 set ambiwidth=single
 
@@ -71,10 +71,27 @@ set nofoldenable
 set nojoinspaces
 
 " Prevent Ag from previewing first match by default
-ca Ag Ag!
+ca Ack Ack!
 
 " CommandT options
- let g:CommandTFileScanner='ruby'
- let g:CommandTTraverseSCM='pwd'
- let g:CommandTWildIgnore=&wildignore . ",/**/node_modules/**,/**/_build/**,/**/deps/**,/**/rel/**,/**/bower_components/**"
- let g:vroom_spec_command='se ./bin/rspec'
+let g:CommandTFileScanner='ruby'
+let g:CommandTTraverseSCM='pwd'
+let g:CommandTWildIgnore=&wildignore . ",*/node_modules/*,*/_build/*,*/deps/*,*/rel/*,*/bower_components/*"
+
+" Ack with ag
+if executable('ag')
+ let g:ackprg = 'ag --vimgrep'
+endif
+
+" Log files have filetype log
+au BufRead,BufNewFile *.logbook set filetype=logbook
+
+" Toggle NerdTree with CTRL+F
+nnoremap <C-f> :NERDTreeToggle<CR>
+
+" Replace word under cursor
+:nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+" Use CTRL+e to expand a snippet
+let g:UltiSnipsExpandTrigger="<c-e>"
+set switchbuf=usetab
