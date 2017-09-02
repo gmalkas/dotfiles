@@ -54,3 +54,6 @@ export PATH="$HOME/tools/dmux:$HOME/tools/vim/bin:$HOME/tools/rebar3:$HOME/tools
 
 # erl/iex shell history
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+# source private stuff
+for f in ~/.bash_profile_*; do source $f; done
