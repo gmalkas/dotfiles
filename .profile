@@ -30,12 +30,19 @@ alias gl='git log --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Crese
 alias gpr='git pull --rebase'
 alias gp='git push'
 alias gs='git status'
+alias gm='git merge'
+
 alias psa='ps aux | grep'
 alias rebar='rebar3'
+
 alias today='date +%Y-%m-%d'
 alias yesterday='date --date="1 day ago" +%Y-%m-%d'
 alias tomorrow='date --date="tomorrow" +%Y-%m-%d'
 alias nlog='cd /opt/work/logbooks && vim -O `yesterday`.logbook `today`.logbook + -c ":winc l" +'
+
+alias mc='while true; do inotifywait -e modify lib/**/*.ex; mix compile; done'
+alias mtw='mix test.watch'
+alias mt='mix test'
 
 [ -f ~/.dotfiles/git-prompt.sh ] && source ~/.dotfiles/git-prompt.sh
 [ -f ~/.dotfiles/git-completion.bash ] && source ~/.dotfiles/git-completion.bash
